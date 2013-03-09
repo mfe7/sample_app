@@ -24,6 +24,11 @@ class User < ActiveRecord::Base
   validates :password, presence: true, length: { minimum: 6 }
   validates :password_confirmation, presence: true
 
+  belongs_to :plan
+  validates_presence_of :plan_id
+  validates_presence_of :email
+  attr_accessor :stripe_card_token
+
   private
 
     def create_remember_token
