@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :signed_in_user, only: [:index, :edit, :update, :destroy]
+  before_filter :signed_in_user, only: [:index, :edit, :update, :destroy, :newCharge, :createCharge]
   before_filter :correct_user,   only: [:edit, :update]
   before_filter :admin_user,     only: :destroy
 
@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save
       sign_in @user
-      flash[:success] = "Welcome to the Sample App!"
+      flash[:success] = "Welcome to the MIT EDM site!"
       redirect_to @user
     else
       render 'new'
@@ -45,6 +45,29 @@ class UsersController < ApplicationController
     redirect_to users_url
   end
 
+  def newCharge
+  end
+
+  def createCharge
+    #amount in cents
+    @amount = ticket_price * 100
+    @user = current_user
+
+    customer = Stripe::Customer.create(
+      :email => @user.email,
+      :card => params[:stripeToken]
+      )
+
+    charge = Stripe::Charge.create(
+      :customer    => customer.id,
+      :amount      => @amount,
+      :description => 'Rails Stripe customer',
+      :currency    => 'usd'
+      )
+  end
+
+  
+
   private
 
     def signed_in_user
@@ -62,4 +85,8 @@ class UsersController < ApplicationController
     def admin_user
       redirect_to(root_path) unless current_user.admin?
     end
+
+  rescue Stripe::CardError => e
+    flash[:error] = e.message
+    redirect_to swiped_path
 end

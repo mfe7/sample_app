@@ -34,5 +34,9 @@ module SessionsHelper
   def store_location
     session[:return_to] = request.url
   end
+
+  def ticket_price
+    ticket_price = 30
+  end
   
 end
