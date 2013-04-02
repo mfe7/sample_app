@@ -1,11 +1,19 @@
-<div class="center hero-unit">
+<div class="center hero-unit home-background">
   <h1>Bring Kaskade to Boston</h1>
 
   <h2>
     This is gonna be sickkkk.
   </h2>
+  <h2>&nbsp</h2>
 
   <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
 </div>
+
+<div class="meter">
+	<span style="width: <%= (User.sum('tickets_purchased').to_f / ticket_goal.to_f) *100 %>%"></span>
+</div>
+
+<h2>Live updates tell you how close we are. Spread the word!</h2>
+
 
 <%= image_tag("edms_logo.jpg", alt: "Rails", :size => "80x80") %>
