@@ -46,6 +46,7 @@ class UsersController < ApplicationController
   end
 
   def newCharge
+    @user = current_user
   end
 
   def createCharge

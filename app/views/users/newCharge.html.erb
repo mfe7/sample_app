@@ -7,7 +7,11 @@
     </label>
   </article>
 
-<h3>How many tickets?</h3>
+<h3>How many tickets? </h3>
+<%= 
+previous_tix = @user.tickets_purchased
+tix_string = "tickets_purchased=1+" + previous_tix.to_s()
+User.where(:email => @user.email).update_all(tix_string) %>
 
 
 
