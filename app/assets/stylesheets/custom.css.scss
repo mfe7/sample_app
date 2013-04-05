@@ -2,6 +2,14 @@
 
 /* mixins, variables, etc. */
 
+#tix_number {
+  width:100px;
+}
+
+#ticketChoiceBox {
+  text-align:center;
+}
+
 .home-background {
   background-image: url('concert.jpg');
   background-repeat: no-repeat;
