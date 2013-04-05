@@ -6,7 +6,13 @@
   </h2>
   <h2>&nbsp</h2>
 
-  <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
+  <%= 
+  if signed_in?
+  link_to "Buy tickets now!", creditcard_path, class: "btn btn-large btn-primary"
+  else
+  	link_to "Buy tickets now!", signup_path, class: "btn btn-large btn-primary"
+  end
+  	%>
 </div>
 
 <div class="meter">
