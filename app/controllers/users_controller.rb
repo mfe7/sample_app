@@ -46,13 +46,17 @@ class UsersController < ApplicationController
   end
 
   def newCharge
+    @tix_number = params[:tickets_wanted]
     @user = current_user
+    tix_string = "tickets_wanted=" + @tix_number.to_s()
+    User.where(:email => @user.email).update_all(tix_string)
   end
 
   def createCharge
     #amount in cents
-    @amount = ticket_price * 100
     @user = current_user
+    @tix = @user.tickets_wanted
+    @amount = ticket_price * @tix * 100
 
     customer = Stripe::Customer.create(
       :email => @user.email,

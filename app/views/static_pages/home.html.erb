@@ -8,7 +8,7 @@
 
   <%= 
   if signed_in?
-  link_to "Buy tickets now!", creditcard_path, class: "btn btn-large btn-primary"
+  link_to "Buy tickets now!", ticketnumber_path, class: "btn btn-large btn-primary"
   else
   	link_to "Buy tickets now!", signup_path, class: "btn btn-large btn-primary"
   end

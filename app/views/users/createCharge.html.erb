@@ -1,6 +1,9 @@
-<h2>Thanks, you paid <strong>$<%= ticket_price %>.00</strong>!</h2>
+<h2>Thanks, you paid <strong>$<%= ticket_price*@user.tickets_wanted %>.00</strong>!</h2>
+
 
 <%= 
 previous_tix = @user.tickets_purchased
-tix_string = "tickets_purchased=1+" + previous_tix.to_s()
+tix_string = "tickets_purchased=" + @user.tickets_wanted.to_s() + "+"+ previous_tix.to_s()
 User.where(:email => @user.email).update_all(tix_string) %>
+
+<h3>You just bought <%= @user.tickets_wanted%> more tickets </h3>
