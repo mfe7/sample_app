@@ -56,7 +56,7 @@ class UsersController < ApplicationController
     #amount in cents
     @user = current_user
     @tix = @user.tickets_wanted
-    @amount = ticket_price * @tix * 100
+    @amount = ticket_price * @tix.to_i() * 100
 
     customer = Stripe::Customer.create(
       :email => @user.email,
