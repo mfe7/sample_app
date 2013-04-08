@@ -2,6 +2,17 @@
 
 /* mixins, variables, etc. */
 
+.home_link {
+ width: 960px;
+ height:622px;
+ display:block;
+ background:transparent url('edms_logo.jpg') no-repeat;
+}
+
+.home_link:hover {
+  background-image: url('edms_logo_enter.jpg');
+}
+
 #tix_number {
   width:100px;
 }
