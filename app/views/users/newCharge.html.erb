@@ -1,6 +1,6 @@
 <% provide(:title, 'Credit Card') %>
 <%= form_tag swiped_path do %>
-<h1>Step 2: Payment Commitment<h1>
+<h1>Step 3: Commitment<h1>
 <h2>By submitting your credit card information, you are accepting the one-time charge of $<%= ticket_price %>.00 per ticket if the concert occurs.</h2>
   <article align=center>
     <label class="amount">
@@ -17,7 +17,7 @@
 <button class="btn btn-large btn-primary" id="customButton">Purchase</button>
 </article>
 
-<h3>You wanna buy <%=@tix_number%> tickets?</h3>
+<h4>You wanna buy <%=@tix_number%> tickets? If not <%= link_to('click here.', 'ticketnumber')%></h4>
 
 
 <script>

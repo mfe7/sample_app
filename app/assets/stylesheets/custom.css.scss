@@ -2,6 +2,48 @@
 
 /* mixins, variables, etc. */
 
+.btn-custom-darken.active {
+  color: rgba(255, 255, 255, 0.75);
+}
+.btn-custom-darken {
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #00b807;
+  background-image: -moz-linear-gradient(top, #00cc08, #009906);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#00cc08), to(#009906));
+  background-image: -webkit-linear-gradient(top, #00cc08, #009906);
+  background-image: -o-linear-gradient(top, #00cc08, #009906);
+  background-image: linear-gradient(to bottom, #00cc08, #009906);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff00cc08', endColorstr='#ff009906', GradientType=0);
+  border-color: #009906 #009906 #004d03;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  *background-color: #009906;
+  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+.btn-custom-darken:hover,
+.btn-custom-darken:focus,
+.btn-custom-darken:active,
+.btn-custom-darken.active,
+.btn-custom-darken.disabled,
+.btn-custom-darken[disabled] {
+  color: #ffffff;
+  background-color: #009906;
+  *background-color: #008005;
+}
+.btn-custom-darken:active,
+.btn-custom-darken.active {
+  background-color: #006604 ;
+}
+
+
+
+
+
+
+
 .home_link {
  width: 960px;
  height:622px;
@@ -18,7 +60,10 @@
 }
 
 #ticketChoiceBox {
-  width:400px;
+  margin:0 auto;
+  text-align: center;
+  width:500px;
+
 }
 
 .home-background {

@@ -14,8 +14,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save
       sign_in @user
-      flash[:success] = "Step 1 Complete!"
-      redirect_to creditcard_path
+      redirect_to ticketnumber_path
     else
       render 'new'
     end
