@@ -1,14 +1,19 @@
 class StaticPagesController < ApplicationController
-  def home
-  end
+	layout "society_layout", :only => :society_home
 
-  def help
-  end
+	def home
+	end
 
-  def about
-  end
+	def help
+	end
 
-  def contact
-  end
+	def about
+	end
+
+	def contact
+	end
+
+	def society_home
+	end
 
 end
