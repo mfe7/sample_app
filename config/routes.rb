@@ -11,6 +11,7 @@ SampleApp::Application.routes.draw do
   match '/creditcard', to: 'users#newCharge'
   match '/swiped',   to: 'users#createCharge'
   match '/ticketnumber', to: 'users#ticketNumber'
+  match '/schoolrace', to: 'users#school_race'
 
   match '/help',    to: 'static_pages#help'
   match '/about',   to: 'static_pages#about'

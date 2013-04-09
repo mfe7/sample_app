@@ -1,6 +1,5 @@
 <li>
   <%= link_to user.name, user %> | 
-  <%= user.tickets_purchased %> | 
   <%= user.school %>
   <% if current_user.admin? && !current_user?(user) %>
     | <%= link_to "delete", user, method: :delete,

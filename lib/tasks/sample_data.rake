@@ -5,7 +5,7 @@ namespace :db do
                  email: "example@railstutorial.org",
                  password: "foobar",
                  password_confirmation: "foobar",
-                 school: "MIT"
+                 school: "Harvard"
                  )
     admin.toggle!(:admin)
     99.times do |n|
@@ -16,8 +16,7 @@ namespace :db do
                    email: email,
                    password: password,
                    password_confirmation: password,
-                   school: "Harvard"
-                   
+                   school: "MIT"
                    )
     end
   end

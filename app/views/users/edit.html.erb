@@ -18,6 +18,9 @@
       <%= f.label :password_confirmation, "Confirm Password" %>
       <%= f.password_field :password_confirmation %>
 
+      <%= f.label :school %>
+      <%= f.select :school, [['MIT', 'MIT'], ['Wellesley', 'Wellesley'], ['Harvard', 'Harvard'], ['Boston Univ.', 'Boston Univ.'], ['Northeastern', 'Northeastern'], ['Boston College','Boston College'], ['Other', 'Other']] %>
+
       <%= f.submit "Save changes", class: "btn btn-large btn-primary btn-custom-darken" %>
     <% end %>
 

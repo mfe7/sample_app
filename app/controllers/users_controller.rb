@@ -44,6 +44,15 @@ class UsersController < ApplicationController
     redirect_to users_url
   end
 
+  def school_race
+    @mit_tickets = User.where(:school => 'MIT').sum('tickets_purchased') 
+    @har_tickets = User.where(:school => 'Harvard').sum('tickets_purchased') 
+    @wel_tickets = User.where(:school => 'Wellesley').sum('tickets_purchased') 
+    @bu_tickets = User.where(:school => 'Boston Univ.').sum('tickets_purchased') 
+    @bc_tickets = User.where(:school => 'Boston College').sum('tickets_purchased') 
+    @ne_tickets = User.where(:school => 'Northeastern').sum('tickets_purchased') 
+  end
+
   def newCharge
     @tix_number = params[:tickets_wanted]
     @user = current_user
@@ -57,16 +66,14 @@ class UsersController < ApplicationController
     @tix = @user.tickets_wanted
     @amount = ticket_price * @tix.to_i() * 100
 
+    previous_tix = @user.tickets_purchased
+    tix_string = "tickets_purchased=" + @user.tickets_wanted.to_s() + "+"+ previous_tix.to_s()
+    User.where(:email => @user.email).update_all(tix_string)
+
     customer = Stripe::Customer.create(
       :email => @user.email,
-      :card => params[:stripeToken]
-      )
-
-    charge = Stripe::Charge.create(
-      :customer    => customer.id,
-      :amount      => @amount,
-      :description => 'Rails Stripe customer',
-      :currency    => 'usd'
+      :card => params[:stripeToken],
+      :description => @amount
       )
   end
 
