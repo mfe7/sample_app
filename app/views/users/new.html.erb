@@ -21,6 +21,9 @@
       <%= f.label :school %>
       <%= f.select :school, [['MIT', 'MIT'], ['Wellesley', 'Wellesley'], ['Harvard', 'Harvard'], ['Boston Univ.', 'Boston Univ.'], ['Northeastern', 'Northeastern'], ['Boston College','Boston College'], ['Other', 'Other']] %>
 
+      <%= f.label :excite, "Tell us how excited you are (max. 100 characters)" %>
+      <%= f.text_field :excite %>
+
       <%= f.submit "Next Step", class: "btn btn-large btn-primary btn-custom-darken" %>
     <% end %>
   </div>

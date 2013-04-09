@@ -10,7 +10,7 @@
 #
 
 class User < ActiveRecord::Base
-  attr_accessible :name, :email, :password, :password_confirmation, :school
+  attr_accessible :name, :email, :password, :password_confirmation, :school, :excite
   has_secure_password
 
   before_save { |user| user.email = email.downcase }
@@ -23,6 +23,7 @@ class User < ActiveRecord::Base
                     uniqueness: { case_sensitive: false }
   validates :password, presence: true, length: { minimum: 6 }
   validates :password_confirmation, presence: true
+  validates :excite, length: {maximum: 100}
 
   private
 
