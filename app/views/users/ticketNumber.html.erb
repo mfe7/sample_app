@@ -1,7 +1,13 @@
 <div id="ticketChoiceBox">
 <h1>Step 2: How many tickets?</h1>
 <form action=<%=creditcard_path%> id="tix_number_form" method="POST">
-<input type="text" name="tickets_wanted" placeholder="Between 1-5" required>
-<button type="submit" class="btn btn-large btn-primary">Next Step</button>
+<select name="tickets_wanted" form="tix_number_form">
+	<option value=1>1</option>
+	<option value=2>2</option>
+	<option value=3>3</option>
+	<option value=4>4</option>
+	<option value=5>5</option>
+</select>
+<button type="submit" class="btn btn-large btn-primary btn-custom-darken">Next Step</button>
 </form>
 </div>

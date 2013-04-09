@@ -2,11 +2,20 @@
 <%= form_tag swiped_path do %>
 <h1>Step 3: Commitment<h1>
 <h2>By submitting your credit card information, you are accepting the one-time charge of $<%= ticket_price %>.00 per ticket if the concert occurs.</h2>
-  <article align=center>
-    <label class="amount">
-      <span>Single Ticket Price: $<%= ticket_price %>.00</span>
-    </label>
-  </article>
+      <table align="center" border="0">
+        <tr>
+        <td>Single ticket price:</td>
+        <td>$<%= ticket_price %>.00</td>
+        </tr>
+        <tr>
+        <td></td>
+        <td>x <%= @tix_number %> tickets</td>
+        </tr>
+        <tr>
+          <td>Total:</td>
+          <td>$<%= ticket_price * @tix_number.to_i() %>.00
+        </tr>
+      </table><br>
 
 
 
@@ -14,10 +23,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
 
 <article align=center>
-<button class="btn btn-large btn-primary" id="customButton">Purchase</button>
+<button class="btn btn-large btn-primary btn-custom-darken" id="customButton">Commit</button>
 </article>
-
-<h4>You wanna buy <%=@tix_number%> tickets? If not <%= link_to('click here.', 'ticketnumber')%></h4>
 
 
 <script>

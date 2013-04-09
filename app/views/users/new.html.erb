@@ -12,13 +12,16 @@
       <%= f.label :email %>
       <%= f.text_field :email %>
 
-      <%= f.label :password %>
+      <%= f.label :password, "Password (at least 6 characters)" %>
       <%= f.password_field :password %>
 
-      <%= f.label :password_confirmation, "Confirmation" %>
+      <%= f.label :password_confirmation, "Confirm Password" %>
       <%= f.password_field :password_confirmation %>
 
-      <%= f.submit "Next Step", class: "btn btn-large btn-primary" %>
+      <%= f.label :school %>
+      <%= f.select :school, [['MIT', 'MIT'], ['Harvard', 'Harvard'], ['Boston Univ.', 'Boston Univ.'], ['Northeastern', 'Northeastern'], ['Boston College','Boston College'], ['Other', 'Other']] %>
+
+      <%= f.submit "Next Step", class: "btn btn-large btn-primary btn-custom-darken" %>
     <% end %>
   </div>
 </div>

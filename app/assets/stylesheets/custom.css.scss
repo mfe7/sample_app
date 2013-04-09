@@ -8,17 +8,17 @@
 .btn-custom-darken {
   color: #ffffff;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  background-color: #00b807;
-  background-image: -moz-linear-gradient(top, #00cc08, #009906);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#00cc08), to(#009906));
-  background-image: -webkit-linear-gradient(top, #00cc08, #009906);
-  background-image: -o-linear-gradient(top, #00cc08, #009906);
-  background-image: linear-gradient(to bottom, #00cc08, #009906);
+  background-color: #00bb6c;
+  background-image: -moz-linear-gradient(top, #00cf78, #009c5a);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#00cf78), to(#009c5a));
+  background-image: -webkit-linear-gradient(top, #00cf78, #009c5a);
+  background-image: -o-linear-gradient(top, #00cf78, #009c5a);
+  background-image: linear-gradient(to bottom, #00cf78, #009c5a);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff00cc08', endColorstr='#ff009906', GradientType=0);
-  border-color: #009906 #009906 #004d03;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff00cf78', endColorstr='#ff009c5a', GradientType=0);
+  border-color: #009c5a #009c5a #00502e;
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-  *background-color: #009906;
+  *background-color: #009c5a;
   /* Darken IE7 buttons by default so they stand out more given they won't have borders */
 
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
@@ -30,12 +30,12 @@
 .btn-custom-darken.disabled,
 .btn-custom-darken[disabled] {
   color: #ffffff;
-  background-color: #009906;
-  *background-color: #008005;
+  background-color: #009c5a;
+  *background-color: #00834c;
 }
 .btn-custom-darken:active,
 .btn-custom-darken.active {
-  background-color: #006604 ;
+  background-color: #00693d ;
 }
 
 
@@ -70,6 +70,10 @@
   background-image: url('concert.jpg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
+}
+
+.home-background h1 {
+  color:white;
 }
 
 $grayMediumLight: #eaeaea;
@@ -288,33 +292,33 @@ input {
        -moz-border-radius-bottomleft: 20px;
               border-top-left-radius: 20px;
            border-bottom-left-radius: 20px;
-  background-color: rgb(43,194,83);
+  background-color: rgb(0, 187, 108);
   background-image: -webkit-gradient(
     linear,
     left bottom,
     left top,
-    color-stop(0, rgb(43,194,83)),
-    color-stop(1, rgb(84,240,84))
+    color-stop(0, rgb(0, 187, 108)),
+    color-stop(1, rgb(28,230,85))
    );
   background-image: -webkit-linear-gradient(
     center bottom,
-    rgb(43,194,83) 37%,
-    rgb(84,240,84) 69%
+    rgb(0, 187, 108) 100%,
+    rgb(0, 187, 108) 100%
    );
   background-image: -moz-linear-gradient(
     center bottom,
-    rgb(43,194,83) 37%,
-    rgb(84,240,84) 69%
+    rgb(0, 187, 108) 100%,
+    rgb(0, 187, 108) 100%
    );
   background-image: -ms-linear-gradient(
     center bottom,
-    rgb(43,194,83) 37%,
-    rgb(84,240,84) 69%
+    rgb(0, 187, 108) 100%,
+    rgb(0, 187, 108) 100%
    );
   background-image: -o-linear-gradient(
     center bottom,
-    rgb(43,194,83) 37%,
-    rgb(84,240,84) 69%
+    rgb(0, 187, 108) 100%,
+    rgb(0, 187, 108) 100%
    );
   -webkit-box-shadow: 
     inset 0 2px 9px  rgba(255,255,255,0.3),

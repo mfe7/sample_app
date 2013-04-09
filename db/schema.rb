@@ -14,15 +14,16 @@
 ActiveRecord::Schema.define(:version => 20130405153001) do
 
   create_table "users", :force => true do |t|
-    t.string    "name"
-    t.string    "email"
-    t.timestamp "created_at",                           :null => false
-    t.timestamp "updated_at",                           :null => false
-    t.string    "password_digest"
-    t.string    "remember_token"
-    t.boolean   "admin",             :default => false
-    t.integer   "tickets_purchased", :default => 0
-    t.integer   "tickets_wanted",    :default => 0
+    t.string   "name"
+    t.string   "email"
+    t.datetime "created_at",                           :null => false
+    t.datetime "updated_at",                           :null => false
+    t.string   "password_digest"
+    t.string   "remember_token"
+    t.boolean  "admin",             :default => false
+    t.integer  "tickets_purchased", :default => 0
+    t.string   "school"
+    t.integer  "tickets_wanted",    :default => 0
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
