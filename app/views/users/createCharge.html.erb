@@ -1,8 +1,22 @@
+
+
 <h3><% if @customer.active_card!=nil  %>
+	<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 <%previous_tix = @user.tickets_purchased
     tix_string = "tickets_purchased=" + @user.tickets_wanted.to_s() + "+"+ previous_tix.to_s()
     User.where(:email => @user.email).update_all(tix_string)%>
 Cool, you just got <%= @user.tickets_wanted %> tickets!
+
+<div class="fb-like" data-href="https://mfe7.herokuapp.com/tickets" data-send="true" data-width="450" data-show-faces="true" data-font="arial"></div>
+
+
 
 <% else %>
 You don't have a card on file. <%= link_to "Let's try again", ticketnumber_path %>
