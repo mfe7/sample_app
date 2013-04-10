@@ -1,4 +1,15 @@
-<h2>Thanks, you committed <strong>$<%= ticket_price*@user.tickets_wanted.to_i() %>.00</strong>!</h2>
+<h3><% if @customer.active_card!=nil  %>
+You have a card on file now.
+<%previous_tix = @user.tickets_purchased
+    tix_string = "tickets_purchased=" + @user.tickets_wanted.to_s() + "+"+ previous_tix.to_s()
+    User.where(:email => @user.email).update_all(tix_string)%>
+
+<% else %>
+You don't have a card on file. <%= link_to "Let's try again", ticketnumber_path %>
+
+<%end%>
+</h3>
 
 
-<h3>You just bought <%= @user.tickets_wanted%> more tickets </h3>
+
+

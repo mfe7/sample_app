@@ -66,15 +66,17 @@ class UsersController < ApplicationController
     @tix = @user.tickets_wanted
     @amount = ticket_price * @tix.to_i() * 100
 
-    previous_tix = @user.tickets_purchased
-    tix_string = "tickets_purchased=" + @user.tickets_wanted.to_s() + "+"+ previous_tix.to_s()
-    User.where(:email => @user.email).update_all(tix_string)
+    
 
-    customer = Stripe::Customer.create(
+    @customer = Stripe::Customer.create(
       :email => @user.email,
       :card => params[:stripeToken],
       :description => @amount
       )
+
+    
+
+
   end
 
   

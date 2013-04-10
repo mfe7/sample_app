@@ -7,4 +7,12 @@ module UsersHelper
     gravatar_url = "https://secure.gravatar.com/avatar/#{gravatar_id}?s=#{size}"
     image_tag(gravatar_url, alt: user.name, class: "gravatar")
   end
+
+	def active_card
+  		if @customer.active_card == nil
+			puts 'No active card.'
+		else
+			puts "$"+ ticket_price*@user.tickets_wanted.to_i() +".00"
+		end
+	end
 end
