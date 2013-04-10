@@ -1,6 +1,6 @@
 <li>
-  <%= link_to user.name, user %> | 
-  <%= user.school %> |
+  <div class="guest-list"><%= link_to user.name, user %></div>
+  <div class="guest-list"><%= user.school %></div>
   <%= user.excite %>
   <% if current_user.admin? && !current_user?(user) %>
     | <%= link_to "delete", user, method: :delete,

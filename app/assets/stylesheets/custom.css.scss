@@ -2,6 +2,11 @@
 
 /* mixins, variables, etc. */
 
+.guest-list {
+  width: 250px;
+  float:left;
+}
+
 .dropdown-menu li > a:hover, .dropdown-menu li > a:focus, .dropdown-submenu:hover > a {
     background-image:none;
     background-color: #00bb6c;
