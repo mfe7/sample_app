@@ -65,17 +65,17 @@ class UsersController < ApplicationController
     @user = current_user
     @tix = @user.tickets_wanted
     @amount = ticket_price * @tix.to_i() * 100
-
-    
+    if params[:stripeToken]==nil
+        @descr = 'bogus'
+    else
+        @descr = @amount
+    end  
 
     @customer = Stripe::Customer.create(
       :email => @user.email,
       :card => params[:stripeToken],
-      :description => @amount
+      :description => @descr
       )
-
-    
-
 
   end
 
