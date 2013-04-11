@@ -1,8 +1,12 @@
 <% provide(:title, 'Sign up') %>
 <h1>Step 1: Basic Info</h1>
 
+
+
 <div class="row">
   <div class="span6 offset3">
+
+    <h2>How it works: <br>1. Book a ticket.<br>2. Once you book your ticket, your card number is held on file until the progress bar reaches capacity.<br>3. Spread the word.<br>4. Once the bar reaches capacity, we prepare for the show.  Only then is your account charged.<br>5. Get ready for Kaskade.</h2>
     <%= form_for(@user) do |f| %>
       <%= render 'shared/error_messages' %>
 

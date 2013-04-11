@@ -3,9 +3,9 @@
 
   <%= 
   if signed_in?
-  link_to "Buy tickets now!", ticketnumber_path, class: "btn btn-large btn-primary btn-custom-darken"
+  link_to "Make it happen!", ticketnumber_path, class: "btn btn-large btn-primary btn-custom-darken"
   else
-  	link_to "Buy tickets now!", signup_path, class: "btn btn-large btn-primary btn-custom-darken"
+  	link_to "Make it happen!", signup_path, class: "btn btn-large btn-primary btn-custom-darken"
   end
   	%>
 </div>
@@ -14,7 +14,7 @@
 	<span style="width: <%= (User.sum('tickets_purchased').to_f / ticket_goal.to_f) *100 %>%"></span>
 </div>
 
-<h2>Live updates tell you how close we are. Spread the word!</h2>
+<h2>Bring Kaskade to Boston September 21. Live updates tell you how close we are.<br>Spread the word!</h2>
 
 
 <%= image_tag("edms_logo_single.png", alt: "EDM logo", :size => "80x80") %>
